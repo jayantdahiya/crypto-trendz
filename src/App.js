@@ -1,19 +1,17 @@
 import './App.scss';
-import {Button, Grid, Column, ContentSwitcher, Switch} from '@carbon/react';
-
+import Chart from './Components/Chart';
+import SwitchBar from './Components/Switch';
 
 function App() {
   return (
-    <Grid>
-     <Column>1</Column>
-     <Column>
-     <ContentSwitcher onChange={console.log}>
-  <Switch name={'first'} text='First section' />
-  <Switch name={'second'} text='Second section' />
-  <Switch name={'third'} text='Third section' />
-</ContentSwitcher>
-</Column>
-    </Grid>
+    <div>
+      <div className='chartDiv'>
+        <Chart />
+      </div>
+      <div className="switchBar">
+        <SwitchBar />
+      </div>
+    </div>
   );
 }
 
