@@ -77,7 +77,7 @@ function Trends() {
         }) => (
           <TableContainer
             title="Trending Coins"
-            description="Top 50 coins by market cap"
+            description="Top 100 coins"
             {...getTableContainerProps()}
           >
             <Table {...getTableProps()}>

@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { Search } from '@carbon/react';
+import { Dropdown, Search } from '@carbon/react';
 import { AppContext } from '../App';
 
 function SearchTab() {
@@ -7,15 +7,39 @@ function SearchTab() {
   console.log(tickers)
   return (
     <div>
-      <Search
-        autoComplete={tickers}
-        closeButtonLabelText="Clear search input"
-        defaultValue=""
-        id="search-1"
-        labelText="Search"
-        onChange={(e) => console.log(e.target.value)}
-        onKeyDown={(e) => console.log(e.target.value)}
-        size="lg"
+      <Dropdown
+        helperText="This is some helper text"
+        id="default"
+        itemToString={function noRefCheck() {}}
+        items={[
+          {
+            id: "option-0",
+            text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+          },
+          {
+            id: "option-1",
+            text: "Option 1",
+          },
+          {
+            id: "option-2",
+            text: "Option 2",
+          },
+          {
+            disabled: true,
+            id: "option-3",
+            text: "Option 3 - a disabled item",
+          },
+          {
+            id: "option-4",
+            text: "Option 4",
+          },
+          {
+            id: "option-5",
+            text: "Option 5",
+          },
+        ]}
+        label="Dropdown menu options"
+        titleText="Dropdown label"
       />
     </div>
   );

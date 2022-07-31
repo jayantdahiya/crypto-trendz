@@ -1,12 +1,20 @@
 import React from 'react';
-import { ButtonSet, Button } from "@carbon/react";
+import { ButtonSet, Button, TextInput, Modal } from "@carbon/react";
 import { Search, ChartLine, List } from '@carbon/icons-react';
 import { useNavigate } from 'react-router-dom';
 
 function SwitchBar() {
   let navigate = useNavigate();
   const handleSearch = () => {
-    navigate('/search');
+    // navigate('/search');
+    <Modal open modalHeadind="Search">
+      <TextInput 
+      data-modal-primary-focus
+      id="text-input-1"
+      labelText="Search"
+      placeholder="Type here"
+       />
+    </Modal>;
   }
   const handleTrends = () => {
     navigate('/trends');
