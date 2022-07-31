@@ -1,46 +1,30 @@
 import React, {useContext} from 'react'
-import { Dropdown, Search } from '@carbon/react';
+import { Button, Dropdown, Search, Select, SelectItem } from '@carbon/react';
 import { AppContext } from '../App';
+import { useNavigate } from 'react-router-dom';
 
 function SearchTab() {
-  const {tickers} = useContext(AppContext);
-  console.log(tickers)
+  const {tickers, searchName, setSearchName, marketData} = useContext(AppContext);
+  let navigate = useNavigate();
+  const handleChartSearch = (e) => {
+    setSearchName(e.target.value);
+    navigate('/');
+    console.log(searchName);
+  }
+  console.log(marketData)
   return (
     <div>
-      <Dropdown
-        helperText="This is some helper text"
-        id="default"
-        itemToString={function noRefCheck() {}}
-        items={[
-          {
-            id: "option-0",
-            text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-          },
-          {
-            id: "option-1",
-            text: "Option 1",
-          },
-          {
-            id: "option-2",
-            text: "Option 2",
-          },
-          {
-            disabled: true,
-            id: "option-3",
-            text: "Option 3 - a disabled item",
-          },
-          {
-            id: "option-4",
-            text: "Option 4",
-          },
-          {
-            id: "option-5",
-            text: "Option 5",
-          },
-        ]}
-        label="Dropdown menu options"
-        titleText="Dropdown label"
-      />
+      <Select
+      id="select-1"
+      labelText="Select your coin"
+      helperText="Make a selection from the list"
+      onChange={handleChartSearch}
+      >
+      {marketData.map((ticker) => (
+        <SelectItem value={ticker.symbol} text={ticker.name}></SelectItem>
+      ))}
+        <SelectItem value="BTC" text="Bitcoin" /> 
+      </Select>
     </div>
   );
 }

@@ -1,19 +1,23 @@
-import React, { Component } from "react";
+import React, { useContext } from 'react';
+import { AppContext } from '../App';
+import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
 
-import { TradingViewStockChartWidget } from "react-tradingview-components";
-
-class Chart extends Component {
-  render() {
-    return (
-      <TradingViewStockChartWidget 
-      symbol="BTC" 
-      theme="Dark" 
-      range="12m" 
-      allow_symbol_change={false}
-      width={'100vw'}
-       />
-    );
-  }
+function Chart() {
+  const {searchName} = useContext(AppContext);
+  return (
+    <div style={{
+      width: "100vw",
+      height: "90vh",
+    }}>
+    <AdvancedRealTimeChart 
+    theme='dark' 
+    symbol={searchName}
+    autosize
+    allow_symbol_change={false}
+    locale='en'
+    ></AdvancedRealTimeChart>
+    </div>
+  )
 }
 
-export default Chart;
+export default Chart

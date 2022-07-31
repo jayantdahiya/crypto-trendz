@@ -11,6 +11,7 @@ import {
 import { useEffect } from 'react';
 import { AppContext } from '../App';
 import { TableContainer, TableExpandedRow, TableExpandHeader, TableExpandRow } from '@carbon/react';
+import { SymbolInfo } from 'react-ts-tradingview-widgets';
 
 function Trends() {
   const {marketData} = useContext(AppContext);
@@ -23,7 +24,7 @@ function Trends() {
     }).format(number);
   
   const rows = marketData.map((coin) => ({
-      id: coin.id,
+      id: coin.symbol,
       img: (
         <img src={coin.image} alt="${coin.name}" style={{ width: "2rem" }} />
       ),
@@ -106,10 +107,11 @@ function Trends() {
                         <TableCell key={cell.id}>{cell.value}</TableCell>
                       ))}
                     </TableExpandRow>
-                    <TableExpandedRow
-                      colSpan={headers.length + 1}
-                      className="demo-expanded-td"
-                    ></TableExpandedRow>
+                    <TableExpandedRow colSpan={headers.length + 1}>
+                      {row.cells.map((cell) => (
+                        <div></div>
+                      ))}
+                    </TableExpandedRow>
                   </React.Fragment>
                 ))}
               </TableBody>

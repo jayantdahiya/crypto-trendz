@@ -6,15 +6,7 @@ import { useNavigate } from 'react-router-dom';
 function SwitchBar() {
   let navigate = useNavigate();
   const handleSearch = () => {
-    // navigate('/search');
-    <Modal open modalHeadind="Search">
-      <TextInput 
-      data-modal-primary-focus
-      id="text-input-1"
-      labelText="Search"
-      placeholder="Type here"
-       />
-    </Modal>;
+    navigate('/search');
   }
   const handleTrends = () => {
     navigate('/trends');
