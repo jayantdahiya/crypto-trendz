@@ -4,14 +4,15 @@ import { AppContext } from '../App';
 
 function Chart() {
   const {searchName} = React.useContext(AppContext);
+  console.log(searchName);
   return (
-    <div className='h-full w-full'>
+    <div className="w-screen h-screen fixed">
       <AdvancedRealTimeChart
         theme="dark"
         symbol={searchName}
-        autosize
         allow_symbol_change={false}
         locale="en"
+        autosize={true}
       ></AdvancedRealTimeChart>
     </div>
   );
