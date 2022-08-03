@@ -16,20 +16,26 @@ function SearchTab() {
       <Block>
         <BlockTitle>Search</BlockTitle>
         <List inset>
-          <ListInput 
+          <ListInput
             label="Enter the coin name or symbol"
-            type='text'
-            placeholder='Search Coin (e.g. BTC, ETH, LTC)'
+            type="text"
+            placeholder="Search Coin (e.g. BTC, ETH, LTC)"
             value={searchName}
-            clearButton={searchName !== ''}
+            clearButton={searchName !== ""}
             onChange={handleChange}
-            onClear={() => setSearchName('')}
+            onClear={() => setSearchName("")}
           />
-          <Button
-            onClick={() => navigate("/")}
-            disabled={searchName === ''}
-            raised
-          >Search</Button>
+          <div
+          className='flex justify-center p-2 w-full m-auto'
+          >
+            <Button
+              onClick={() => navigate("/")}
+              disabled={searchName === ""}
+              raised
+            >
+              Search
+            </Button>
+          </div>
         </List>
       </Block>
     </div>

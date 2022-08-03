@@ -38,7 +38,7 @@ export default function MyApp() {
     fetchMarketData();
   }, []);
   return (
-    <App theme="ios">
+    <App theme="ios" dark={false}>
       <Page>
         <Navbar title="Cryto-Trendz 🚀" />
         <AppContext.Provider value={{ searchName, setSearchName, marketData }}>
