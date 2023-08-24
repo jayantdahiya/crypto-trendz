@@ -1,12 +1,11 @@
 import React from "react";
-import { App, Page, Navbar, Block} from "konsta/react";
+import { App, Page, Navbar} from "konsta/react";
 import Chart from './Components/Chart';
 import { createContext, useEffect } from "react";
 import Trends from "./Pages/Trends";
 import SearchTab from "./Pages/SearchTab";
 import { Routes, Route } from "react-router-dom";
 import TabBar from "./Components/TabBar";
-import { useState } from "react";
 import './App.css';
 
 export const AppContext = createContext();

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../App';
-import { Block, BlockTitle, List, ListItem } from 'konsta/react';
+import { Block } from 'konsta/react';
 import { Table } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,28 +33,7 @@ function Trends() {
   if(marketData){
     return (
       <Block>
-        {/* <List>
-          {marketData.map((coin) => (
-            <ListItem
-              link
-              title={coin.name}
-              after={formatDollar(coin.current_price,2)}
-              subtitle={coin.price_change_percentage_24h.toFixed(2)+'%'}
-              text={formatDollar(coin.market_cap,2)}
-              href={`/`}
-              onClick={(e) => (setSeachName(e.target.value))}
-              value={coin.symbol}
-              media={
-                <img
-                  src={coin.image}
-                  alt="${coin.name}"
-                  style={{ width: "2rem" }}
-                />
-              }
-            />
-          ))}
-        </List> */}
-        <div className="h-screen w-screen">
+        <div className="w-screen h-screen">
           <Table hover className="table-auto">
             <thead>
               <tr>

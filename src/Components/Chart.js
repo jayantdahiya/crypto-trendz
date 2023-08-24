@@ -6,7 +6,7 @@ function Chart() {
   const {searchName} = React.useContext(AppContext);
   console.log(searchName);
   return (
-    <div className="w-screen h-screen fixed">
+    <div className="relative w-screen h-screen">
       <AdvancedRealTimeChart
         theme="dark"
         symbol={searchName}

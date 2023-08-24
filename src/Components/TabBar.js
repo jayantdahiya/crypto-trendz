@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { TbChartCandle, TbListSearch } from "react-icons/tb";
 import { FaListUl } from "react-icons/fa";
 import { Tabbar, TabbarLink } from 'konsta/react';
-import { useContext } from 'react';
 
 function TabBar() {
   const [activeTab, setActiveTab] = useState(0);
@@ -23,7 +22,7 @@ function TabBar() {
     };
   return (
     <div>
-      <Tabbar className="left-0 bottom-0 fixed">
+      <Tabbar className="fixed bottom-0 left-0 h-[17vh]">
         <TabbarLink
           active={activeTab === 0}
           icon={<TbChartCandle className='h-5' />}
